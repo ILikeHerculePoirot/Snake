@@ -14,10 +14,10 @@ while True:
         for e in g.event.get():
             if e.type==g.QUIT:sys.exit()
             elif(e.type==g.KEYDOWN):
-                if(e.key==g.K_UP and l !='d'):l='u'
-                elif(e.key==g.K_DOWN and l!='u'):l='d'
-                elif(e.key==g.K_LEFT and l !='r'):l='l'
-                elif(e.key==g.K_RIGHT and l !='l'):l='r'
+                if((e.key==g.K_w or e.key==g.K_UP) and l!='d'):l='u'
+                elif((e.key==g.K_s or e.key==g.K_DOWN) and l!='u'):l='d'
+                elif((e.key==g.K_a or e.key==g.K_LEFT) and l !='r'):l='l'
+                elif((e.key==g.K_d or e.key==g.K_RIGHT)and l !='l'):l='r'
         a=[s[0][0],s[0][1]]
         if(l=='u'):s[0][1]-=20
         elif(l=='d'):s[0][1]+=20
@@ -40,11 +40,11 @@ while True:
             elif(l=='l'):s.append([(s[len(s)-1][0]+20),(s[len(s)-1][1])])
             elif(l=='r'):s.append([(s[len(s)-1][0]-20),(s[len(s)-1][1])])
         for i in range(1,len(s)):
-            ff=[(s[i][0]-a[0]),(s[i][1]-a[1])]
+            h=[(s[i][0]-a[0]),(s[i][1]-a[1])]
             s[i]=a
-            a=[s[i][0]+ff[0],s[i][1]+ff[1]]
+            a=[s[i][0]+h[0],s[i][1]+h[1]]
         c.fill((0,0,0))
         g.draw.rect(c,(255,255,255),f)
         for p in s:g.draw.rect(c,(255,255,255),g.Rect(p[0],p[1],20,20))
-        time.sleep(0.1)
+        time.sleep(0.05)
         g.display.update()
