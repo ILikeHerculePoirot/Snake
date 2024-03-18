@@ -32,12 +32,12 @@ while True:
                 p=r.randint(1,780)
                 q=r.randint(1,580)
                 f.topleft=(p-(p%20),q-(q%20))
-            if(l=='u'):s.append([(s[len(s)-1][0]),(s[len(s)-1][1]+20)])
-            elif(l=='d'):s.append([(s[len(s)-1][0]),(s[len(s)-1][1]-20)])
-            elif(l=='l'):s.append([(s[len(s)-1][0]+20),(s[len(s)-1][1])])
-            elif(l=='r'):s.append([(s[len(s)-1][0]-20),(s[len(s)-1][1])])
+            if(l=='u'):s.append([s[len(s)-1][0],s[len(s)-1][1]+20])
+            elif(l=='d'):s.append([s[len(s)-1][0],s[len(s)-1][1]-20])
+            elif(l=='l'):s.append([s[len(s)-1][0]+20,s[len(s)-1][1]])
+            elif(l=='r'):s.append([s[len(s)-1][0]-20,s[len(s)-1][1]])
         for i in range(1,len(s)):
-            h=[(s[i][0]-a[0]),(s[i][1]-a[1])]
+            h=[s[i][0]-a[0],s[i][1]-a[1]]
             s[i]=a
             a=[s[i][0]+h[0],s[i][1]+h[1]]
         c.fill((0,0,0))
