@@ -16,6 +16,7 @@ while True:
                 elif(e.key==g.K_s and l!='u'):l='d'
                 elif(e.key==g.K_a and l !='r'):l='l'
                 elif(e.key==g.K_d and l !='l'):l='r'
+        a=[s[0][0],s[0][1]]
         if(l=='u'):s[0][1]-=20
         elif(l=='d'):s[0][1]+=20
         elif(l=='l'):s[0][0]-=20
@@ -31,13 +32,9 @@ while True:
             elif(l=='d'):s.append([s[-1][0],s[-1][1]-20])
             elif(l=='l'):s.append([s[-1][0]+20,s[-1][1]])
             elif(l=='r'):s.append([s[-1][0]-20,s[-1][1]])
-        a=[s[0][0],s[0][1]]
-        for i in range(1,len(s)):
-            h=[s[i][0]-a[0],s[i][1]-a[1]]
-            s[i]=a
-            a=[s[i][0]+h[0],s[i][1]+h[1]]
+        for i in range(1,len(s)):h=s[i];s[i]=a;a=h
         c.fill((0,0,0))
         g.draw.rect(c,(255,255,255),f)
         for p in s:g.draw.rect(c,(255,255,255),g.Rect(p[0],p[1],20,20))
-        time.sleep(0.07)
+        time.sleep(0.05)
         g.display.update()
