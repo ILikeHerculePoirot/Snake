@@ -13,8 +13,8 @@ while True:
             if(e.type==g.KEYDOWN):
                 if(e.key==g.K_w and l!='d'):l='u'
                 elif(e.key==g.K_s and l!='u'):l='d'
-                elif(e.key==g.K_a and l !='r'):l='l'
-                elif(e.key==g.K_d and l !='l'):l='r'
+                elif(e.key==g.K_a and l!='r'):l='l'
+                elif(e.key==g.K_d and l!='l'):l='r'
         a=[s[0][0],s[0][1]]
         if(l=='u'):s[0][1]-=20
         elif(l=='d'):s[0][1]+=20
