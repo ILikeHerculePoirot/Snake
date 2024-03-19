@@ -1,5 +1,4 @@
 import pygame as g,random as r,time,sys
-g.init()
 c=g.display.set_mode((800,600))
 g.display.set_caption('Snake')
 while True:
@@ -11,7 +10,7 @@ while True:
     while True:
         for e in g.event.get():
             if e.type==g.QUIT:sys.exit()
-            elif(e.type==g.KEYDOWN):
+            if(e.type==g.KEYDOWN):
                 if(e.key==g.K_w and l!='d'):l='u'
                 elif(e.key==g.K_s and l!='u'):l='d'
                 elif(e.key==g.K_a and l !='r'):l='l'
