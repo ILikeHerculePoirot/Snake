@@ -51,8 +51,8 @@ while True:
             snake_coordinates[i] = previous_coordinate
             previous_coordinate = current_coordinate
         screen.fill((0,0,0))
-        pygame.draw.rect(screen,(255,255,255),food)
+        pygame.draw.rect(screen,(128,0,0),food)
         for coordinate in snake_coordinates:
-            pygame.draw.rect(screen,(255,255,255),pygame.Rect(coordinate[0],coordinate[1],20,20))
+            pygame.draw.rect(screen,(0,128,0),pygame.Rect(coordinate[0],coordinate[1],20,20))
         pygame.display.update()
-        time.sleep(0.05)
+        time.sleep(0.06)
