@@ -36,7 +36,7 @@ while True:
             snake_coordinates[0][0]-=20
         elif(snake_direction=='right'):
             snake_coordinates[0][0]+=20
-        if(snake_coordinates[0][0]<0 or snake_coordinates[0][0]>800 or snake_coordinates[0][1]<0 or snake_coordinates[0][1]>600 or len(snake_coordinates)!=len(set(tuple(coordinate) for coordinate in snake_coordinates))):
+        if(snake_coordinates[0][0]<0 or snake_coordinates[0][0]>=800 or snake_coordinates[0][1]<0 or snake_coordinates[0][1]>=600 or len(snake_coordinates)!=len(set(tuple(coordinate) for coordinate in snake_coordinates))):
             break
         if(snake_coordinates[0][0]==food.x and snake_coordinates[0][1]==food.y):
             score+=1
