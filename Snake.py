@@ -7,8 +7,8 @@ pygame.display.set_caption('Snake')
 clock = pygame.time.Clock()
 while True:
     score = 0
-    food_x = random.randint(1,39)
-    food_y = random.randint(1,29)
+    food_x = random.randint(0,39)
+    food_y = random.randint(0,29)
     food = pygame.Rect(food_x*20,food_y*20,20,20)
     snake_coordinates = [[400,300]]
     snake_direction = ''
