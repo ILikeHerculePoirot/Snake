@@ -7,9 +7,7 @@ pygame.display.set_caption('Snake')
 clock = pygame.time.Clock()
 while True:
     score = 0
-    food_x = random.randint(0,39)
-    food_y = random.randint(0,29)
-    food = pygame.Rect(food_x*20,food_y*20,20,20)
+    food = pygame.Rect(random.randint(0,39)*20,random.randint(0,29)*20,20,20)
     snake_coordinates = [[400,300]]
     snake_direction = ''
     font = pygame.font.SysFont('Times new roman',28)
@@ -40,9 +38,7 @@ while True:
             break
         if(snake_coordinates[0][0]==food.x and snake_coordinates[0][1]==food.y):
             score+=1
-            food_x = random.randint(1,39)
-            food_y = random.randint(1,29)
-            food.topleft = (food_x*20,food_y*20)
+            food.topleft = (random.randint(1,39)*20,random.randint(1,29)*20)
             if(snake_direction=='up'):
                 snake_coordinates.append([snake_coordinates[-1][0],snake_coordinates[-1][1]+20])
             elif(snake_direction=='down'):
