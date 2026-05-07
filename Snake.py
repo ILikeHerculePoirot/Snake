@@ -55,7 +55,7 @@ while True:
         pygame.draw.rect(screen,(128,0,0),food)
         for coordinate in snake_coordinates:
             pygame.draw.rect(screen,(0,128,0),pygame.Rect(coordinate[0],coordinate[1],20,20))
-        screen.blit(score_display,(1180,0))
+        screen.blit(score_display,(1150,0))
         pygame.display.update()
         if(len(snake_coordinates)!=len(set(tuple(coordinate) for coordinate in snake_coordinates))):
             break
